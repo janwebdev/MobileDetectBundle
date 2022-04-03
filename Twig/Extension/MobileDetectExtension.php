@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\Twig\Extension;
+namespace Janwebdev\MobileDetectBundle\Twig\Extension;
 
-use SunCat\MobileDetectBundle\DeviceDetector\MobileDetector;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Extension\AbstractExtension;

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\Helper;
+namespace Janwebdev\MobileDetectBundle\Helper;
 
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;

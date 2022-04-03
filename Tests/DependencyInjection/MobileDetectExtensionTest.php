@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\Tests\DependencyInjection;
+namespace Janwebdev\MobileDetectBundle\Tests\DependencyInjection;
 
 use PHPUnit_Framework_MockObject_MockBuilder;
 use PHPUnit\Framework\TestCase;
-use SunCat\MobileDetectBundle\DependencyInjection\MobileDetectExtension;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\DependencyInjection\MobileDetectExtension;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
@@ -68,19 +68,19 @@ class MobileDetectExtensionTest extends TestCase
         );
         $this->assertEquals(DeviceView::SWITCH_PARAM_DEFAULT, $this->container->getParameter('mobile_detect.switch_param'));
         $this->assertEquals(
-            'SunCat\MobileDetectBundle\DeviceDetector\MobileDetector',
+            'Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector',
             $this->container->getParameter('mobile_detect.mobile_detector.class')
         );
         $this->assertEquals(
-            'SunCat\MobileDetectBundle\Helper\DeviceView',
+            'Janwebdev\MobileDetectBundle\Helper\DeviceView',
             $this->container->getParameter('mobile_detect.device_view.class')
         );
         $this->assertEquals(
-            'SunCat\MobileDetectBundle\EventListener\RequestResponseListener',
+            'Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener',
             $this->container->getParameter('mobile_detect.request_response_listener.class')
         );
         $this->assertEquals(
-            'SunCat\MobileDetectBundle\Twig\Extension\MobileDetectExtension',
+            'Janwebdev\MobileDetectBundle\Twig\Extension\MobileDetectExtension',
             $this->container->getParameter('mobile_detect.twig.extension.class')
         );
 

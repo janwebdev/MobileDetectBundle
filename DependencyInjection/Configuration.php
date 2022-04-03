@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\DependencyInjection;
+namespace Janwebdev\MobileDetectBundle\DependencyInjection;
 
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use SunCat\MobileDetectBundle\EventListener\RequestResponseListener;
+use Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener;
 
 /**
  * Bundle configuration
@@ -86,10 +86,10 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('cookie_httponly')->defaultValue(DeviceView::COOKIE_HTTP_ONLY_DEFAULT)->end()
                 ->scalarNode('cookie_expire_datetime_modifier')->defaultValue(DeviceView::COOKIE_EXPIRE_DATETIME_MODIFIER_DEFAULT)->cannotBeEmpty()->end()
                 ->scalarNode('switch_param')->defaultValue(DeviceView::SWITCH_PARAM_DEFAULT)->cannotBeEmpty()->end()
-                ->scalarNode('mobile_detector_class')->defaultValue('SunCat\MobileDetectBundle\DeviceDetector\MobileDetector')->cannotBeEmpty()->end()
-                ->scalarNode('device_view_class')->defaultValue('SunCat\MobileDetectBundle\Helper\DeviceView')->cannotBeEmpty()->end()
-                ->scalarNode('request_response_listener_class')->defaultValue('SunCat\MobileDetectBundle\EventListener\RequestResponseListener')->cannotBeEmpty()->end()
-                ->scalarNode('twig_extension_class')->defaultValue('SunCat\MobileDetectBundle\Twig\Extension\MobileDetectExtension')->cannotBeEmpty()->end()
+                ->scalarNode('mobile_detector_class')->defaultValue('Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector')->cannotBeEmpty()->end()
+                ->scalarNode('device_view_class')->defaultValue('Janwebdev\MobileDetectBundle\Helper\DeviceView')->cannotBeEmpty()->end()
+                ->scalarNode('request_response_listener_class')->defaultValue('Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener')->cannotBeEmpty()->end()
+                ->scalarNode('twig_extension_class')->defaultValue('Janwebdev\MobileDetectBundle\Twig\Extension\MobileDetectExtension')->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

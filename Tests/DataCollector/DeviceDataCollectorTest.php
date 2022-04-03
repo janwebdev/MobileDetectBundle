@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\Tests\DataCollector;
+namespace Janwebdev\MobileDetectBundle\Tests\DataCollector;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;
-use SunCat\MobileDetectBundle\DataCollector\DeviceDataCollector;
-use SunCat\MobileDetectBundle\EventListener\RequestResponseListener;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
-use SunCat\MobileDetectBundle\Twig\Extension\MobileDetectExtension;
+use Janwebdev\MobileDetectBundle\DataCollector\DeviceDataCollector;
+use Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\Twig\Extension\MobileDetectExtension;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -56,7 +56,7 @@ class DeviceDataCollectorTest extends TestCase
     {
         parent::setUp();
 
-        $this->mobileDetector = $this->getMockBuilder('SunCat\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
+        $this->mobileDetector = $this->getMockBuilder('Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
         $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
         $this->request->query = new ParameterBag();
         $this->request->cookies = new ParameterBag();

@@ -1,10 +1,10 @@
 <?php
 
-namespace SunCat\MobileDetectBundle\Tests\Helper;
+namespace Janwebdev\MobileDetectBundle\Tests\Helper;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -334,7 +334,7 @@ class DeviceViewTest extends TestCase
         $deviceView = new DeviceView($this->requestStack);
         $deviceView->setRedirectConfig([DeviceView::VIEW_MOBILE => ['status_code' => 301]]);
         $response = $deviceView->getRedirectResponseBySwitchParam('/redirect-url');
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(301, $response->getStatusCode());
     }
 
@@ -347,7 +347,7 @@ class DeviceViewTest extends TestCase
         $deviceView = new DeviceView($this->requestStack);
         $deviceView->setRedirectConfig([DeviceView::VIEW_TABLET => ['status_code' => 301]]);
         $response = $deviceView->getRedirectResponseBySwitchParam('/redirect-url');
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(301, $response->getStatusCode());
     }
 
@@ -359,7 +359,7 @@ class DeviceViewTest extends TestCase
         $this->request->query = new ParameterBag();
         $deviceView = new DeviceView($this->requestStack);
         $response = $deviceView->getRedirectResponseBySwitchParam('/redirect-url');
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
     }
 
@@ -393,7 +393,7 @@ class DeviceViewTest extends TestCase
         $this->request->query = new ParameterBag();
         $deviceView = new DeviceView($this->requestStack);
         $response = $deviceView->getRedirectResponse(DeviceView::VIEW_MOBILE, 'http://mobilesite.com', 302);
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $cookies = $response->headers->getCookies();
         $this->assertGreaterThan(0, count($cookies));
@@ -419,7 +419,7 @@ class DeviceViewTest extends TestCase
         $deviceView->setCookieHttpOnly(false);
 
         $response = $deviceView->getRedirectResponse(DeviceView::VIEW_MOBILE, 'http://mobilesite.com', 302);
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
 
         /** @var Cookie[] $cookies */

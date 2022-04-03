@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle;
+namespace Janwebdev\MobileDetectBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

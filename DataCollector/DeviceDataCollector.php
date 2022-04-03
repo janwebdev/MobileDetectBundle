@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\DataCollector;
+namespace Janwebdev\MobileDetectBundle\DataCollector;
 
-use SunCat\MobileDetectBundle\EventListener\RequestResponseListener;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;

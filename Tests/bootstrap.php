@@ -8,7 +8,7 @@ php composer.phar install
 }
 
 spl_autoload_register(function($class) {
-    if (0 === strpos($class, 'SunCat\MobileDetectBundle\\') &&
+    if (0 === strpos($class, 'Janwebdev\MobileDetectBundle\\') &&
         file_exists($file = __DIR__ . '/../' . implode('/', array_slice(explode('\\', $class), 3)) . '.php')
     ) {
         require_once $file;

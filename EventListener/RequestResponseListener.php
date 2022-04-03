@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\EventListener;
+namespace Janwebdev\MobileDetectBundle\EventListener;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
-use SunCat\MobileDetectBundle\DeviceDetector\MobileDetector;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
-use SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie;
+use Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

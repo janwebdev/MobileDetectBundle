@@ -1,11 +1,11 @@
 <?php
 
-namespace SunCat\MobileDetectBundle\Tests\RequestListener;
+namespace Janwebdev\MobileDetectBundle\Tests\RequestListener;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;
-use SunCat\MobileDetectBundle\EventListener\RequestResponseListener;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\EventListener\RequestResponseListener;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
@@ -59,8 +59,8 @@ class RequestResponseListenerTest extends TestCase
     {
         parent::setUp();
 
-        $this->mobileDetector = $this->getMockBuilder('SunCat\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
-        $this->deviceView = $this->getMockBuilder('SunCat\MobileDetectBundle\Helper\DeviceView')->disableOriginalConstructor()->getMock();
+        $this->mobileDetector = $this->getMockBuilder('Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
+        $this->deviceView = $this->getMockBuilder('Janwebdev\MobileDetectBundle\Helper\DeviceView')->disableOriginalConstructor()->getMock();
         $this->router = $this->getMockBuilder('Symfony\Bundle\FrameworkBundle\Routing\Router')
             ->disableOriginalConstructor()
             ->setMethods(array('getRouteCollection'))
@@ -101,7 +101,7 @@ class RequestResponseListenerTest extends TestCase
         $this->assertFalse($listener->needsResponseModification());
 
         $response = $event->getResponse();
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $cookies = $response->headers->getCookies();
         $this->assertGreaterThan(0, count($cookies));
@@ -139,7 +139,7 @@ class RequestResponseListenerTest extends TestCase
         $this->assertFalse($listener->needsResponseModification());
 
         $response = $event->getResponse();
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
             'http://mobilehost.com/?%s=%s&myparam=myvalue',
@@ -255,7 +255,7 @@ class RequestResponseListenerTest extends TestCase
         $this->assertEquals(DeviceView::VIEW_TABLET, $deviceView->getViewType());
 
         $response = $getResponseEvent->getResponse();
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
                 'http://testsite.com/some/parameters?%s=%s&some=param',
@@ -306,7 +306,7 @@ class RequestResponseListenerTest extends TestCase
         $this->assertEquals(DeviceView::VIEW_TABLET, $deviceView->getViewType());
 
         $response = $getResponseEvent->getResponse();
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
                 'http://testsite.com/some/parameters?%s=%s&some=param',
@@ -396,7 +396,7 @@ class RequestResponseListenerTest extends TestCase
 
         $response = $getResponseEvent->getResponse();
 
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
                 'http://mobilehost.com/some/parameters?%s=%s',
@@ -443,7 +443,7 @@ class RequestResponseListenerTest extends TestCase
 
         $response = $getResponseEvent->getResponse();
 
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals('http://testsite.com?device_view=tablet', $response->getTargetUrl());
         $this->assertEquals(sprintf(
@@ -540,7 +540,7 @@ class RequestResponseListenerTest extends TestCase
 
         $response = $getResponseEvent->getResponse();
 
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
                 'http://testsite.com/some/parameters?%s=%s',
@@ -588,7 +588,7 @@ class RequestResponseListenerTest extends TestCase
 
         $response = $getResponseEvent->getResponse();
 
-        $this->assertInstanceOf('SunCat\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
+        $this->assertInstanceOf('Janwebdev\MobileDetectBundle\Helper\RedirectResponseWithCookie', $response);
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(sprintf(
                 'http://testsite.com?%s=%s',

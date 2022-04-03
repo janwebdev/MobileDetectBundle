@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SunCat\MobileDetectBundle\DeviceDetector;
+namespace Janwebdev\MobileDetectBundle\DeviceDetector;
 
 use Detection\MobileDetect;
 

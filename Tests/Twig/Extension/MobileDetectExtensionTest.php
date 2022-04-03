@@ -1,11 +1,11 @@
 <?php
 
-namespace SunCat\MobileDetectBundle\Tests\Helper;
+namespace Janwebdev\MobileDetectBundle\Tests\Helper;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;
-use SunCat\MobileDetectBundle\Helper\DeviceView;
-use SunCat\MobileDetectBundle\Twig\Extension\MobileDetectExtension;
+use Janwebdev\MobileDetectBundle\Helper\DeviceView;
+use Janwebdev\MobileDetectBundle\Twig\Extension\MobileDetectExtension;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,7 +46,7 @@ class MobileDetectExtensionTest extends TestCase
     {
         parent::setUp();
 
-        $this->mobileDetector = $this->getMockBuilder('SunCat\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
+        $this->mobileDetector = $this->getMockBuilder('Janwebdev\MobileDetectBundle\DeviceDetector\MobileDetector')->disableOriginalConstructor()->getMock();
         $this->requestStack = $this->getMockBuilder('Symfony\Component\HttpFoundation\RequestStack')->disableOriginalConstructor()->getMock();
 
         $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
