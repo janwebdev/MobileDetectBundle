@@ -1,6 +1,6 @@
 <?php
 
-namespace Janwebdev\MobileDetectBundle\Tests\Helper;
+namespace Janwebdev\MobileDetectBundle\Tests\Twig\Extension;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;

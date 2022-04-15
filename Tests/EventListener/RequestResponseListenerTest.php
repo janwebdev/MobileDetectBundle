@@ -1,6 +1,6 @@
 <?php
 
-namespace Janwebdev\MobileDetectBundle\Tests\RequestListener;
+namespace Janwebdev\MobileDetectBundle\Tests\EventListener;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_MockObject_MockBuilder;
